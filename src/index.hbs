@@ -4,6 +4,12 @@
   <title>{{page_meta.title}}</title>
   <meta name="keywords" content="{{page_meta.meta_keywords}}">
   <meta name="description" content="{{page_meta.meta_description}}">
+  <script>
+    Handlebars.registerHelper("sorting", function (list) {
+      const pagination = list.map(el => "div class='pagination_element'" + el + "</div>");
+      return "<div class='button_left'><</div>\n" + pagination.join("\n") + "\n<div>></div>";
+    });
+  </script>
 </head>
 <body>
 <header>
@@ -19,55 +25,70 @@
 <div class="breadcrumbs">
   <ul>
     {{#each breadcrumbs}}
-      <li><a href="{{this.href}}">{{this.text}}</a></li>
+      <li><a href="{{this.href}}" title="{{this.text}}">{{this.text}}</a></li>
     {{/each}}
   </ul>
 </div>
 <main>
-  <div class="search_panel">
-    <p>26 Results Found</p>
+  <h1>{{page_meta.h1}}</h1>
 
-    <details class="dropdown" open>
-      <summary>Param 1</summary>
-      <input id="valueOne" type="checkbox" class="custom_checkbox"/>
-      <label for="valueOne">value 1</label>
-      <input id="valueTwo" type="checkbox" class="custom_checkbox"/>
-      <label for="valueTwo">value 2</label>
-      <input id="valueThree" type="checkbox" class="custom_checkbox"/>
-      <label for="valueThree">value 3</label>
-      <input id="valueFour" type="checkbox" class="custom_checkbox"/>
-      <label for="valueFour">value 4</label>
-      <input id="valueFive" type="checkbox" class="custom_checkbox"/>
-      <label for="valueFive">value 5</label>
-    </details>
-
-    <details class="dropdown" open>
-      <summary>Param 2</summary>
-      <input id="valueTwoOne" type="checkbox" class="custom_checkbox"/>
-      <label for="valueTwoOne">value 2_1</label>
-      <input id="valueTwoTwo" type="checkbox" class="custom_checkbox"/>
-      <label for="valueTwoTwo">value 2_2</label>
-      <input id="valueTwoThree" type="checkbox" class="custom_checkbox"/>
-      <label for="valueTwoThree">value 2_3</label>
-    </details>
-
-    <details class="dropdown" open>
-      <summary>Param 3</summary>
-      <div class="dropdown_content">
-        <input aria-label="Minimum value" placeholder="min" type="number" min="0"/>
-        <input aria-label="Maximum value" placeholder="max" type="number" min="0"/>
-      </div>
-    </details>
-
-    <details class="dropdown" open>
-      <summary>Param 4</summary>
-      <input aria-label="Keyword" placeholder="Keyword"/>
-    </details>
-
-    <button class="button primary">Search</button>
-  </div>
   <div class="content">
-    <h1>{{page_meta.h1}}</h1>
+    <div class="content__search_panel">
+      <p>26 Results Found</p>
+
+      <details class="dropdown" open>
+        <summary>Param 1</summary>
+        <input id="valueOne" type="checkbox" class="custom_checkbox"/>
+        <label for="valueOne">value 1</label>
+        <input id="valueTwo" type="checkbox" class="custom_checkbox"/>
+        <label for="valueTwo">value 2</label>
+        <input id="valueThree" type="checkbox" class="custom_checkbox"/>
+        <label for="valueThree">value 3</label>
+        <input id="valueFour" type="checkbox" class="custom_checkbox"/>
+        <label for="valueFour">value 4</label>
+        <input id="valueFive" type="checkbox" class="custom_checkbox"/>
+        <label for="valueFive">value 5</label>
+      </details>
+
+      <details class="dropdown" open>
+        <summary>Param 2</summary>
+        <input id="valueTwoOne" type="checkbox" class="custom_checkbox"/>
+        <label for="valueTwoOne">value 2_1</label>
+        <input id="valueTwoTwo" type="checkbox" class="custom_checkbox"/>
+        <label for="valueTwoTwo">value 2_2</label>
+        <input id="valueTwoThree" type="checkbox" class="custom_checkbox"/>
+        <label for="valueTwoThree">value 2_3</label>
+      </details>
+
+      <details class="dropdown" open>
+        <summary>Param 3</summary>
+        <div class="dropdown_content">
+          <input aria-label="Minimum value" placeholder="min" type="number" min="0"/>
+          <input aria-label="Maximum value" placeholder="max" type="number" min="0"/>
+        </div>
+      </details>
+
+      <details class="dropdown" open>
+        <summary>Param 4</summary>
+        <input aria-label="Keyword" placeholder="Keyword"/>
+      </details>
+
+      <button class="button primary">Search</button>
+    </div>
+    <div class="content__main">
+      <div class="upper_content">
+        <div class="pagination">
+          <button aria-label="arrow left"><</button>
+          {{#each breadcrumbs}}
+            <div aria-label="pagination_item">{{@index}}</div>
+          {{/each}}
+          <button aria-label="arrow right" aria-disabled="true" disabled>></button>
+        </div>
+        <div class="sorting">
+
+        </div>
+      </div>
+    </div>
   </div>
 
 </main>
