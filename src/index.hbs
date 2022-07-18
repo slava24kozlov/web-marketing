@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{page_meta.title}}</title>
+  <meta name="keywords" content="{{page_meta.meta_keywords}}">
+  <meta name="description" content="{{page_meta.meta_description}}">
+</head>
+<body>
+<header>
+  <p>{{page_meta.h1}}</p>
+</header>
+<nav>
+  <ul>
+    {{#each nav}}
+      <li><a href="{{this.href}}">{{this.text}}</a></li>
+    {{/each}}
+  </ul>
+</nav>
+<div class="breadcrumbs">
+  <ul>
+    {{#each breadcrumbs}}
+      <li><a href="{{this.href}}">{{this.text}}</a></li>
+    {{/each}}
+  </ul>
+</div>
+<main>
+  <div class="search_panel">
+    <p>26 Results Found</p>
+
+    <details class="dropdown" open>
+      <summary>Param 1</summary>
+      <input id="valueOne" type="checkbox" class="custom_checkbox"/>
+      <label for="valueOne">value 1</label>
+      <input id="valueTwo" type="checkbox" class="custom_checkbox"/>
+      <label for="valueTwo">value 2</label>
+      <input id="valueThree" type="checkbox" class="custom_checkbox"/>
+      <label for="valueThree">value 3</label>
+      <input id="valueFour" type="checkbox" class="custom_checkbox"/>
+      <label for="valueFour">value 4</label>
+      <input id="valueFive" type="checkbox" class="custom_checkbox"/>
+      <label for="valueFive">value 5</label>
+    </details>
+
+    <details class="dropdown" open>
+      <summary>Param 2</summary>
+      <input id="valueTwoOne" type="checkbox" class="custom_checkbox"/>
+      <label for="valueTwoOne">value 2_1</label>
+      <input id="valueTwoTwo" type="checkbox" class="custom_checkbox"/>
+      <label for="valueTwoTwo">value 2_2</label>
+      <input id="valueTwoThree" type="checkbox" class="custom_checkbox"/>
+      <label for="valueTwoThree">value 2_3</label>
+    </details>
+
+    <details class="dropdown" open>
+      <summary>Param 3</summary>
+      <div class="dropdown_content">
+        <input aria-label="Minimum value" placeholder="min" type="number" min="0"/>
+        <input aria-label="Maximum value" placeholder="max" type="number" min="0"/>
+      </div>
+    </details>
+
+    <details class="dropdown" open>
+      <summary>Param 4</summary>
+      <input aria-label="Keyword" placeholder="Keyword"/>
+    </details>
+
+    <button class="button primary">Search</button>
+  </div>
+  <div class="content">
+    <h1>{{page_meta.h1}}</h1>
+  </div>
+
+</main>
+</body>
+</html>
