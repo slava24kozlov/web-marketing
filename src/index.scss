@@ -150,9 +150,19 @@ html {
 
         /*CONTENT*/
         .content__main {
-           .upper_content {
+          width: 100%;
+          .upper_content {
+            display: flex;
+            justify-content: space-between;
 
-           }
+            .sorting {
+              select {
+                margin-left: 10px;
+                width: 207px;
+                height: 35px;
+              }
+            }
+          }
         }
       }
     }
@@ -266,6 +276,7 @@ html {
           color: #BDBDBD;
         }
       }
+
       & > div:last-of-type {
         background-color: #56CCF2;
       }
