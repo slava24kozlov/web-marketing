@@ -1,12 +1,11 @@
-<section>
-  <img width="224" height="auto" src="./media/{{this.image}}" alt="{{this.title}}">
+<section class="card">
+  <img width="224" height="168" src="./media/{{this.image}}" alt="{{this.title}}">
   <div>
-    <h2>{{this.title}}</h2>
-    <span>{{this.price}}</span>
+    <h2>{{this.title}}<span>$ {{this.price}}</span></h2>
     <p>Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio,
       officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium!
       Saepe quisquam libero soluta itaque?</p>
-    <div>
+    <div class="card__info">
       <span>{{this.year}}</span>
       <span>{{this.mileage}} {{this.mileage_measure}}</span>
       <span>{{this.axle_configuration}}</span>

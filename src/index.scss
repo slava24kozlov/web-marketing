@@ -156,6 +156,9 @@ html {
             display: flex;
             justify-content: space-between;
           }
+          .lower_content {
+            padding-left: 8px;
+          }
         }
       }
     }
@@ -247,40 +250,6 @@ html {
       &:checked + label:before {
         background-image: url("./media/checkbox_icon.svg");
         background-color: #2D9CDB;
-      }
-    }
-
-    /*PAGINATION*/
-    .pagination {
-      display: flex;
-
-      & > div, button {
-        font-size: 1rem;
-        line-height: 35px;
-        text-align: center;
-        width: 35px;
-        height: 35px;
-        background-color: #FFFFFF;
-        border: none;
-        margin: 0 8px;
-        cursor: pointer;
-
-        &[role="button"]:disabled {
-          color: #BDBDBD;
-        }
-      }
-
-      & > div:last-of-type {
-        background-color: #56CCF2;
-      }
-    }
-
-    /*SORTING*/
-    .sorting {
-      select {
-        margin-left: 10px;
-        width: 207px;
-        height: 35px;
       }
     }
   }

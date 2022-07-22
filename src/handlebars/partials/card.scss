@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  padding: 16px;
+  background-color: #FFF;
+  margin: 16px auto;
+
+  h2 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  .card__info {
+    span {
+      padding: 0 5px;
+      margin-right: 5px;
+      background-color: #D9D9D9;
+    }
+  }
+}
