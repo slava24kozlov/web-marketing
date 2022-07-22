@@ -71,41 +71,12 @@
     </div>
     <div class="content__main">
       <div class="upper_content">
-        <div class="pagination">
-          <button aria-label="arrow left"><</button>
-          {{#each breadcrumbs}}
-            <div aria-label="pagination_item">{{@index}}</div>
-          {{/each}}
-          <button aria-label="arrow right" aria-disabled="true" disabled>></button>
-        </div>
-        <div class="sorting">
-          <label>
-            Sort by
-            <select>
-              <option>Sort options</option>
-              <option>By price</option>
-              <option>By date</option>
-              <option>By title</option>
-            </select>
-          </label>
-        </div>
+        {{> partials/pagination}}
+        {{> partials/sorting}}
       </div>
       <div class="lower_content" role="group">
         {{#each stock}}
-          <section>
-            <img src="{{this.image}}" alt="{{this.title}}">
-            <div>
-              <h2>{{this.title}}</h2>
-              <span>{{this.price}}</span>
-              <p>Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque?</p>
-              <div>
-                <span>{{this.year}}</span>
-                <span>{{this.mileage}} {{this.mileage_measure}}</span>
-                <span>{{this.axle_configuration}}</span>
-                <span>{{this.power}} {{this.power_measure}}</span>
-              </div>
-            </div>
-          </section>
+          {{> partials/card}}
         {{/each}}
       </div>
     </div>

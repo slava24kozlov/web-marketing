@@ -37,6 +37,11 @@
       "text": "DAF"
     }
   ],
+  "pagination": [
+    1,
+    2,
+    3
+  ],
   "stock": [
     {
       "href": "#",

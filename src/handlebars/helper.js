@@ -1,0 +1,1 @@
+Handlebars.registerPartial("example", '<p>Example dgdfjgfdkgjf</p>');

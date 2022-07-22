@@ -151,17 +151,10 @@ html {
         /*CONTENT*/
         .content__main {
           width: 100%;
+
           .upper_content {
             display: flex;
             justify-content: space-between;
-
-            .sorting {
-              select {
-                margin-left: 10px;
-                width: 207px;
-                height: 35px;
-              }
-            }
           }
         }
       }
@@ -279,6 +272,15 @@ html {
 
       & > div:last-of-type {
         background-color: #56CCF2;
+      }
+    }
+
+    /*SORTING*/
+    .sorting {
+      select {
+        margin-left: 10px;
+        width: 207px;
+        height: 35px;
       }
     }
   }
