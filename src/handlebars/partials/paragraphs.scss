@@ -1,0 +1,7 @@
+.paragraphs {
+  width: 80%;
+  & > p {
+    text-align: justify;
+    line-height: 1.26;
+  }
+}

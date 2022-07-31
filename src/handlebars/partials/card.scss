@@ -4,17 +4,28 @@
   background-color: #FFF;
   margin: 16px auto;
 
+  & > img {
+    margin-right: 10px;
+  }
+
   h2 {
-    margin-top: 0;
+    margin: 0;
     display: flex;
     justify-content: space-between;
 
     span {
       white-space: nowrap;
+      padding-left: 10px;
     }
   }
 
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+
   .card__info {
+    margin-top: auto;
     span {
       padding: 0 5px;
       margin-right: 5px;

@@ -70,7 +70,7 @@
       <button class="button primary">Search</button>
     </div>
     <div class="content__main">
-      <div class="upper_content">
+      <div class="wrapper_content">
         {{> partials/pagination}}
         {{> partials/sorting}}
       </div>
@@ -79,9 +79,32 @@
           {{> partials/card}}
         {{/each}}
       </div>
+      <div class="wrapper_content">
+        {{> partials/pagination}}
+        {{> partials/sorting}}
+      </div>
+      {{> partials/paragraphs}}
     </div>
+
   </div>
 
 </main>
+<footer>
+  <div class="footer__main_content">
+    <div>
+      <p>Logo / Company Name</p>
+      <p class="footer__location">Company Adress: Lorem ipsum dolor sit amet 18600, Netherlands</p>
+      <p class="footer__telephone">+38 958 755-00-00</p>
+      {{> partials/social-icons}}
+    </div>
+    <div>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias
+        soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis. Quis quo molestias
+        repellat.
+      </p>
+    </div>
+  </div>
+  <p><span id="date">2019</span> - <span>Privacy Policy - Terms and Conditions</span></p>
+</footer>
 </body>
 </html>

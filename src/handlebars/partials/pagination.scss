@@ -8,16 +8,16 @@
     width: 35px;
     height: 35px;
     background-color: #FFFFFF;
-    border: none;
     margin: 0 8px;
+    border: none;
     cursor: pointer;
-
-    &[role="button"]:disabled {
-      color: #BDBDBD;
-    }
   }
 
-  & > div:last-of-type {
+  & > button:first-of-type {
+    margin-left: 0;
+  }
+
+  & > div:first-of-type {
     background-color: #56CCF2;
   }
 }

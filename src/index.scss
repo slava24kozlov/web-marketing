@@ -15,7 +15,7 @@ html {
 
   body {
     background-color: #D9D9D9;
-    margin: 40px 0 0;
+    margin: 20px 10px 0;
 
     /*HEADER*/
     header {
@@ -106,10 +106,12 @@ html {
 
       .content {
         display: flex;
+        justify-content: space-between;
 
         /*SEARCH PANEL*/
         .content__search_panel {
-          width: 270px;
+          box-sizing: border-box;
+          height: 100%;
           padding: 0 16px 16px;
           background-color: #FFF;
 
@@ -151,13 +153,110 @@ html {
         /*CONTENT*/
         .content__main {
           width: 100%;
+          padding-left: 8px;
 
-          .upper_content {
+          .wrapper_content {
             display: flex;
             justify-content: space-between;
           }
+
           .lower_content {
-            padding-left: 8px;
+
+          }
+        }
+      }
+    }
+
+    @media (screen and min-width: 820px) {
+      main {
+        .content {
+          .content__search_panel {
+            width: 100%;
+            max-width: 270px;
+          }
+        }
+      }
+    }
+
+    footer {
+      .footer__main_content {
+        @extend %size-content;
+        background-color: #FFF;
+        display: flex;
+        align-items: center;
+
+        & > div:first-child {
+          max-width: 270px;
+          box-sizing: border-box;
+
+          & > p:first-child {
+            font-size: 1.125rem;
+            line-height: 1.16;
+            font-weight: 700;
+          }
+        }
+
+        & > div:last-child {
+          padding-left: 8px;
+
+          & > p {
+            text-align: justify;
+          }
+        }
+
+        .footer__location {
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: url("./media/icon__location.svg");
+            margin-right: 5px;
+            height: 22px;
+          }
+        }
+
+        .footer__telephone {
+          font-size: 14px;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: url("./media/icon__telephon.svg");
+            margin-right: 5px;
+            height: 14px;
+          }
+        }
+      }
+
+      & > p {
+        font-size: 14px;
+        line-height: 1.26;
+        text-align: center;
+
+        & > span:first-of-type:before {
+          content: "©";
+          margin-right: 5px;
+        }
+
+        & > span:last-of-type {
+          color: #2D9CDB;
+        }
+      }
+    }
+
+    @media (screen and min-width: 820px) {
+      footer {
+        .footer__main_content {
+          & > div:first-child {
+            width: 100%;
+            max-width: 270px;
+          }
+          & > div:last-child {
+            & > p {
+              width: 80%;
+            }
           }
         }
       }
