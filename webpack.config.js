@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const HandlebarsPlugin = require('handlebars-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 console.log("Mode: ", process.env.NODE_ENV);
@@ -19,7 +19,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(),
     new HandlebarsPlugin({
-      entry: path.join(process.cwd(), 'src', "handlebars", '*.hbs'),
+      entry: path.join(process.cwd(), 'src', 'handlebars', '*.hbs'),
       output: path.join(process.cwd(), 'src', '[name].html'),
       data: path.join(__dirname, 'src/dataset.json'),
       partials: [
