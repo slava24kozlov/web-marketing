@@ -1,10 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === 'production';
+console.log("Mode: ", process.env.NODE_ENV);
 
 const config = {
   entry: {
@@ -30,7 +30,7 @@ const config = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/index.html'),
       favicon: path.resolve(__dirname, 'src/media/favicon.ico'),
-      publicPath: "auto",
+      publicPath: "",
       meta: {
         'charset': {
           'charset': 'utf-8'
@@ -42,7 +42,6 @@ const config = {
         }
       }
     }),
-    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
@@ -79,6 +78,7 @@ const config = {
 module.exports = () => {
   if (isProduction) {
     config.mode = 'production';
+    config.devtool = false
   } else {
     config.mode = 'development';
     config.devtool = 'inline-source-map';
