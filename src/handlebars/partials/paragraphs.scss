@@ -1,7 +1,14 @@
 .paragraphs {
-  width: 80%;
+  width: initial;
+
   & > p {
     text-align: justify;
     line-height: 1.26;
+  }
+}
+
+@media (screen and min-width: 820px) {
+  .paragraphs {
+    width: 80%;
   }
 }
