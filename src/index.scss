@@ -178,6 +178,7 @@ html {
       }
     }
 
+    /*FOOTER*/
     footer {
       .footer__main_content {
         @extend %size-content;
@@ -188,6 +189,7 @@ html {
         & > div:first-child {
           max-width: 270px;
           box-sizing: border-box;
+          padding: 20px 0 30px 16px;
 
           & > p:first-child {
             font-size: 1.125rem;
@@ -198,6 +200,7 @@ html {
 
         & > div:last-child {
           padding-left: 8px;
+          padding-right: 16px;
 
           & > p {
             text-align: justify;
@@ -253,7 +256,9 @@ html {
             width: 100%;
             max-width: 270px;
           }
+
           & > div:last-child {
+            padding-right: 0;
             & > p {
               width: 80%;
             }
